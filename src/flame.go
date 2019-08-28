@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
 	"github.com/stianeikeland/go-rpio"
@@ -26,7 +28,16 @@ func main() {
 	pin.PullUp()
 	pin.Detect(rpio.AnyEdge) // enable any edge event detection
 
-	fmt.Println("Detect flame")
+	fmt.Println("Searching for flame...")
+
+	// Clean up on ctrl-c and turn lights out
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		<-c
+		pin.Detect(rpio.NoEdge) // disable edge event detection
+		os.Exit(0)
+	}()
 
 	for {
 		if pin.EdgeDetected() { // check if event occured
