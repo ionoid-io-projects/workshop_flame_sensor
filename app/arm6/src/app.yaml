@@ -1,0 +1,5 @@
+name: flame-env
+version: 1.0
+apps:
+    flame-env:
+        command:    /bin/flame
