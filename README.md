@@ -13,6 +13,8 @@ Detect heat/fire/flame with flame sensor
 | Vcc / + 		   | 5V             |
 | DO 			   | GPIO 21        |
 
+![wiring](doc/img/gpio.png)
+
 # Code
 
 ## 1- Power your raspberry
