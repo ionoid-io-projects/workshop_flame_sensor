@@ -1,17 +1,17 @@
-# workshop_flame_sensor
+# Workshop flame sensor
 
 # Introduction
-Detect heat/fire/flame with flame sensor 
+In this workshop we will see how to detect heat/fire/flame with the flame sensor using the Raspberry Pi. 
 
 # Wiring
 
-![traffic light](doc/img/scheme.png)
+![fire](doc/img/scheme.png)
 
-|flame sensor      |  raspberry pi  |
-|------------------|----------------|
-| Ground 		   | GND            |
-| Vcc / + 		   | 5V             |
-| DO 			   | GPIO 21        |
+|flame sensor         |  raspberry pi  |
+|---------------------|----------------|
+| Ground 		      | GND            |
+| Vcc / + 		      | 5V             |
+| DO (digital output) | GPIO 21        |
 
 ![wiring](doc/img/gpio.png)
 
